@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cerita Lucuku Hari Ini</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(45deg, #ffafbd, #ffc3a0);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 700px;
+        }
+        
+        /* Kotak Cerita */
+        .story-box {
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 20px 40px rgba(255, 107, 107, 0.3);
+            position: relative;
+            overflow: hidden;
+            border: 8px solid #ff9966;
+            transform-style: preserve-3d;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        /* Dekorasi Emoji */
+        .emoji-deco {
+            position: absolute;
+            font-size: 2.5rem;
+            opacity: 0.7;
+            animation: bounce 2s infinite;
+            z-index: 1;
+        }
+        
+        .emoji-1 { top: 15px; left: 20px; animation-delay: 0s; }
+        .emoji-2 { top: 10px; right: 25px; animation-delay: 0.5s; }
+        .emoji-3 { bottom: 15px; left: 25px; animation-delay: 1s; }
+        .emoji-4 { bottom: 10px; right: 20px; animation-delay: 1.5s; }
+        
+        /* Judul */
+        .story-title {
+            color: #ff6b6b;
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 5px dotted #ffcc00;
+            position: relative;
+            z-index: 2;
+        }
+        
+        /* ISI CERITA - Isi cerita Anda di sini */
+        .story-content {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #5a3a22;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .story-content p {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        /* Emoji dalam cerita */
+        .story-emoji {
+            display: inline-block;
+            font-size: 1.8rem;
+            animation: wiggle 2s infinite;
+            margin: 0 5px;
+        }
+        
+        /* Info cerita */
+        .story-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 3px dashed #ff9999;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .date {
+            color: #888;
+            font-style: italic;
+        }
+        
+        .category {
+            background: #ffcc00;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        /* Tombol */
+        .action-button {
+            background: linear-gradient(135deg, #ff9966, #ff6b6b);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            display: block;
+            margin: 30px auto 0;
+            transition: all 0.3s;
+            box-shadow: 0 8px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .action-button:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 12px 20px rgba(255, 107, 107, 0.4);
+        }
+        
+        /* Animasi */
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(1deg); }
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-10px) scale(1.2); }
+        }
+        
+        @keyframes wiggle {
+            0%, 100% { transform: rotate(0deg); }
+            25% { transform: rotate(10deg); }
+            75% { transform: rotate(-10deg); }
+        }
+        
+        @keyframes colorChange {
+            0% { border-color: #ff9966; }
+            33% { border-color: #ffcc00; }
+            66% { border-color: #4ecdc4; }
+            100% { border-color: #ff9966; }
+        }
+        
+        @keyframes sparkle {
+            0% { opacity: 0.3; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+            100% { opacity: 0.3; transform: scale(0.8); }
+        }
+        
+        /* Responsif */
+        @media (max-width: 600px) {
+            .story-box {
+                padding: 25px;
+            }
+            
+            .story-title {
+                font-size: 1.8rem;
+            }
+            
+            .story-content {
+                font-size: 1.1rem;
+            }
+            
+            .emoji-deco {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Kotak Cerita -->
+        <div class="story-box" id="storyBox">
+            <!-- Dekorasi Emoji -->
+            <div class="emoji-deco emoji-1">✨</div>
+            <div class="emoji-deco emoji-2">🎉</div>
+            <div class="emoji-deco emoji-3">🌈</div>
+            <div class="emoji-deco emoji-4">⭐</div>
+            
+            <!-- Judul Cerita -->
+            <h1 class="story-title">My Best Month of 2025<span class="story-emoji">🛒</span></h1>
+            
+            <!-- ISI CERITA - Ganti isi cerita Anda di sini -->
+            <div class="story-content">
+                <p>Desember adalah bulan favorit saya setiap tahunnya, kadang berubah sih, tapi lebih sering suka bulan Desember. Awal desember diawali dengan PAS, untungnya lewat PAS-nya</span> <span class="story-emoji">🐱</span></p>
+                
+                <p>setelah itu di pertengahan Desember, sekolah mengadakan Sport Day, dan kelas XII PPLG 1 akhirnya menang voli dan basket<span class="story-emoji">🏐🏀</span> <span class="story-emoji">😍</span>.</p>
+                
+                <p>Setelah sport day, ada pembagian raport, habistu sudahhh liburr, saya jalan-jalann, hihiy <span class="story-emoji">💆‍♀️</span>.</p>
+            </div>
+            <!-- AKHIR ISI CERITA -->
+            
+            <!-- Info Cerita -->
+            <div class="story-info">
+                <div class="date">emot 2025:😒</div>
+                <div class="category">Yea</div>
+            </div>
+        </div>
+        
+       
